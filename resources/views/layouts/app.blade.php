@@ -7,6 +7,11 @@
 
     <title>Laravel</title>
 
+     <!-- include the BotDetect layout stylesheet -->
+    @if (class_exists('CaptchaUrls'))
+    <link href="{{ CaptchaUrls::LayoutStylesheetUrl() }}" type="text/css" 
+      rel="stylesheet">
+    @endif
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
@@ -28,6 +33,7 @@
 <body id="app-layout">
     <nav class="navbar navbar-default">
         <div class="container">
+            
             <div class="navbar-header">
 
                 <!-- Collapsed Hamburger -->
@@ -47,11 +53,16 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/Admin') }}">Home</a></li>
                 </ul>
                   <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Category</a></li>
+                    <li><a href="{{ url('/home') }}">CMS</a></li>
                 </ul>
+
+                 <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/comment') }}">Comment</a></li>
+                </ul>
+
                  <ul class="nav navbar-nav">
                     <li><a href="{{ url('/contact') }}">Contactus</a></li>
                 </ul>

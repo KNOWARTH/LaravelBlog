@@ -36,8 +36,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', 'HomeController@index');
-    Route::get('/Admin', 'HomeController@index');
-	Route::get('blogpost', 'HomeController@blogpost');
-	Route::get('contact', 'HomeController@contact');
-	Route::get('about', 'HomeController@about');
+    Route::get('comment', 'HomeController@comment');
+     Route::get('admincomment', 'AdminController@admincomment');
+ 	  Route::get('/Admin', 'AdminController@index');
+	 Route::get('blogpost', 'AdminController@blogpost');
+	 Route::post('save', 'AdminController@save');
+	 Route::get('delete/{id}','AdminController@delete');
+	 Route::get('edit/{id}','AdminController@edit');
+	 Route::post('blogedit', 'AdminController@update');
+	  Route::get('cms', 'AdminController@cms');
+	 Route::get('contact', 'AdminController@contact');
+	 Route::get('about', 'AdminController@about');
 });
