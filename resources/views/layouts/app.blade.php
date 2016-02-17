@@ -7,11 +7,7 @@
 
     <title>Laravel</title>
 
-     <!-- include the BotDetect layout stylesheet -->
-    @if (class_exists('CaptchaUrls'))
-    <link href="{{ CaptchaUrls::LayoutStylesheetUrl() }}" type="text/css" 
-      rel="stylesheet">
-    @endif
+    
     <!-- Fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
@@ -53,14 +49,14 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/Admin') }}">Home</a></li>
+                    <li><a href="{{ url('/home') }}">Home</a></li>
                 </ul>
                   <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">CMS</a></li>
+                    <li><a href="{{ url('/showcms') }}">CMS</a></li>
                 </ul>
 
-                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/comment') }}">Comment</a></li>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/showblog') }}">Blog</a></li>
                 </ul>
 
                  <ul class="nav navbar-nav">
@@ -84,7 +80,9 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
+                                 <li><a href="editprofile"><i class="fa fa-btn fa-sign-out"></i>EditProfile</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+
                             </ul>
                         </li>
                     @endif
