@@ -13,15 +13,15 @@
 
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<form action= " {{ url('save') }}" method="post">
+<form action= " {{ url('savecms') }}" method="post">
 
 <input type="hidden" name="_token" value="<?= csrf_token();?>">
-
+<input type="hidden" name="users_id" value="<?= $id?>">
 
 Title
-<input type="text" name="title" class="form-control">
+<input type="text" name="title" class="form-control" required autofocus>
 Description
-<textarea name="content" rows="10" cols="5" class="form-control"></textarea>
+<textarea name="content" rows="10" cols="5" class="form-control" required></textarea>
 <script>
 CKEDITOR.replace('content');
 </script>

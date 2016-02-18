@@ -17,12 +17,13 @@
 <input type="hidden" name="_token" value="<?= csrf_token();?>">
 <input type="hidden" name="users_id" value="<?= $id?>">
 Title
-<input type="text" name="title" class="form-control">
+<input type="text" name="title" class="form-control" required autofocus>
 Description
-<textarea name="content" rows="10" cols="5" class="form-control"></textarea>
+<textarea name="content" rows="10" cols="5" class="form-control" required ></textarea>
 <script>
 CKEDITOR.replace('content');
 </script>
+ 
 <input type="submit" value="Save" class="btn-btn-primary">
 <input type="submit" value="Publish"a class="btn-btn-primary">
 </form>

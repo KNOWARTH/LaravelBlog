@@ -17,7 +17,7 @@ class CreateBlogpostTable extends Migration
              $table->integer('users_id')->unsigned();
              $table->string('title');
             $table->text('content');
-            $table->unsignedInteger('comment_count');
+            $table->unsignedInteger('active');
             $table->timestamp('published_at');
             $table->timestamps();
         });

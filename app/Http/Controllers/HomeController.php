@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
+use Session;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use LaravelCaptcha\Integration\BotDetectCaptcha;
-
+use Illuminate\Pagination\LengthAwarePaginator;
 class HomeController extends Controller
 {
     /**
@@ -13,10 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -25,14 +26,51 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+         $result=DB::table('blogpost')->orderBy('created_at','desc')->paginate(5);
+         return view ('home')->with ('data',$result);
+       
     }
 
-     public function comment()
+   public function contact()
     {
-        return view('comment');
+        return view('auth/contact');
     }
 
+    public function about()
+    {
+        return view('auth/about');
+    }
+
+    public function savecontact(Request $request)
+    {
+          $post=$request->all();
+         $v=\Validator::make($request-> all(),
+        [
+                'firstname'=> 'required',
+                'lastname'=> 'required',
+                'email'=> 'required',
+                'comment'=> 'required',
+
+
+
+        ]);
+
+        if($v->fails())
+        {
+                return redirect()->back()->withErrors($v->errors());
+        }
+        else
+        {
+       
+        unset($post['_token']);
+            $i=DB::table('contactus')->insert($post);
+            if($i>0)
+            {
+                Session::flash('message','Record inserted');
+                return redirect('home');
+            }
+        }
+    }
     
 
 

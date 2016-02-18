@@ -5,53 +5,47 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                 <div class="panel-heading">Comment</div>
+                <div class="panel-heading">User</div>
 
                 <div class="panel-body">
                     
 
-                    <table border="2" align="center" class="table table-border table-hover">
+                   <table border="2" align="center" class="table table-border table-hover">
                     <p style="color:red"><?php echo Session::get('message');?></p>
 
-                    
-                    <thead>
+                      <button><a href ="<?php echo 'adduser' ?>"> Add User</a></button>
+                   <thead>
                       <th>Id</th>
-                      <th>User</th>
-                      <th>Blog</th>
                       <th>Name</th>
                       <th>Email</th>
-                      <th>Comment</th>
                       <th>Action</th>
                      
-                </thead>
+                </thead> 
                 <tbody>
             <?php 
                 foreach($data as $row){
             ?>
-            
 
             <tr>
                 <td><?php echo $row->id ?></td>
-                <td><?php echo $row->users_id ?></td>
-                <td><?php echo $row->blogpost_id ?></td>
-                <td><?php echo $row->commenter ?></td>
-                <td><?php echo $row->email ?></td>
-                <td><?php echo $row->comment ?></td>
+                <td><?php echo $row->name ?></td>
+                <td><?php echo $row->email?></td>
+             
                 
+            
             <td>
-
-
-               <button> <a href="{{ 'approv_comment/'.$row->id }}">Aprove</a> </button> 
-               <button>  <a href="<?php echo 'deletecomment/' .$row->id?>">Delete</a> </button> 
-               
+               <button>  <a href="<?php echo 'editprofile/'.$row->id?>">Edit</a> </button>
+                <button> <a href="<?php echo 'deleteuser/' .$row->id?>">Delete</a>  </button>
             </td>
-            </tr>
+               </tr>
+           
+            
             <?php }?>   
     
             <?php echo $data->render(); ?>
     
             </tbody>
-            </table>
+          </table> 
 
                 </div>
             </div>
