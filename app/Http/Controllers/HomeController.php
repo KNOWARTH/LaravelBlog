@@ -36,7 +36,11 @@ class HomeController extends Controller
         return view('auth/contact');
     }
 
+<<<<<<< HEAD
     public function about()
+=======
+     public function about()
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
     {
         return view('auth/about');
     }

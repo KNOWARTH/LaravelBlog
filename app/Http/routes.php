@@ -37,7 +37,11 @@ Route::group(['middleware' => 'web'], function () {
 
 //Route::get('approv_comment/{id}', 'AdminController@approv_comment');
     Route::get('/', 'HomeController@index');
+<<<<<<< HEAD
     Route::get('comment/{id}', 'UserController@comment');
+=======
+    Route::get('comment', 'UserController@comment');
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
     Route::get('admincomment', 'AdminController@admincomment');
     Route::post('savecomment', 'UserController@savecomment');
     Route::get('deletecomment/{id}','AdminController@deletecomment');
@@ -60,9 +64,12 @@ Route::group(['middleware' => 'web'], function () {
 	Route::get('showuser', 'AdminController@showuser');
 	Route::get('deleteuser/{id}','AdminController@deleteuser');
 	Route::post('savecontact', 'HomeController@savecontact');
+<<<<<<< HEAD
 	Route::get('showcontact', 'AdminController@showcontact');
 	Route::get('deletecontact/{id}','AdminController@deletecontact');
 	
 	//approv_comment
 	
+=======
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 });

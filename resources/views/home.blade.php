@@ -15,6 +15,7 @@
                 <div class="panel-body">  
                
                
+<<<<<<< HEAD
 
                    <!--  <table border="2" align="center" class="table table-border table-hover">  -->
                     <p style="color:red"><?php echo Session::get('message');?></p>
@@ -51,6 +52,42 @@
               
             <?php }?>   
 
+=======
+
+                   <!--  <table border="2" align="center" class="table table-border table-hover"> -->
+                    <p style="color:red"><?php echo Session::get('message');?></p>
+
+                      
+                   <!--  <thead>
+                      <th>Id</th>
+                      <th>Title</th>
+                      <th>Description</th>
+                      <th>Publish</th>
+                      <th>Action</th>
+                     
+                </thead> -->
+                <tbody>
+            <?php 
+                foreach($data as $row){
+            ?>
+            
+
+            <tr>
+               <!--  <td><?php echo $row->id ?></td> -->
+                
+                <td><h1><?php echo $row->title ?></h1></td>
+                <td><?php echo $row->content?></td>
+                 <td><button class="btn btn-primary">Publish </button>  <?php echo $row->published_at?></td>
+
+            </tr>
+
+                
+               <button class="btn btn-secondary"><a href="{{ url('/comment') }}">Comment</a></button>
+               
+            <?php }?>   
+    
+            <?php echo $data->render(); ?>
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
             
             </tbody>
           <!--   </table> -->

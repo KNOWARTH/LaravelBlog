@@ -8,7 +8,11 @@
                 <div class="panel-heading">Comment</div>
 
                 <div class="panel-body">
+<<<<<<< HEAD
      
+=======
+      
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -16,8 +20,13 @@
 <form action= " {{ url('savecomment') }}" method="post">
 
 <input type="hidden" name="_token" value="<?= csrf_token();?>">
+<<<<<<< HEAD
  
 <input type="hidden" name="blogpost_id" id=" blogpost_id " value="{{ $row->id }}">
+=======
+<input type="hidden" name="users_id" value="<?= $id?>">
+<input type="hidden" name="blogpost_id" value="<?= $id?>">
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 Name
 <input type="text" name="commenter" class="form-control">
 Email

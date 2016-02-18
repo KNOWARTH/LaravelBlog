@@ -20,7 +20,11 @@ Title
 <input type="text" name="title"  value="{{$row->title}}" class="form-control">
 
 Description
+<<<<<<< HEAD
 <textarea name="content" rows="10" cols="5" class="form-control">{{$row->content}}</textarea>
+=======
+<textarea name="content" rows="10" cols="5" value="{{$row->content}}" class="form-control"></textarea>
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 <script>
 CKEDITOR.replace('content');
 </script>

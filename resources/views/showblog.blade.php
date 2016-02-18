@@ -36,7 +36,11 @@
             
             </tr>
             <td>
+<<<<<<< HEAD
               <button class="btn btn-secondary"><a href="{{ 'comment/'.$row->id }}">Comment</a></button>
+=======
+              <button class="btn btn-secondary"><a href="{{ url('/comment') }}">Comment</a></button>
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
                
             </td>
             <?php }?>   

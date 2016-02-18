@@ -3,13 +3,19 @@
 namespace App\Http\Controllers;
 use DB;
 use Session;
+<<<<<<< HEAD
 use Validator;
 use App\User;
+=======
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use LaravelCaptcha\Integration\BotDetectCaptcha;
 use Illuminate\Pagination\LengthAwarePaginator;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 class UserController extends Controller
 {
     /**
@@ -18,9 +24,15 @@ class UserController extends Controller
      * @return void
      */
      public function __construct()
+<<<<<<< HEAD
      {
         $this->middleware('auth');
      }
+=======
+    {
+        $this->middleware('auth');
+    }
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 
     /**
      * Show the application dashboard.
@@ -44,15 +56,24 @@ class UserController extends Controller
         return view ('showcms')->with ('data',$result);
     }
    
+<<<<<<< HEAD
      public function comment($id)
      {
        
        $row = DB::table('blogpost')->where('id',$id)->first();
         return view('comment')->with('row',$row);
+=======
+     public function comment()
+     {
+        $id = \Auth::id(); 
+        //$id = blogpost::where('id',$id)->first();
+        return view('comment')->with ('id',$id);
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
        
      }
 
       public function showcomment()
+<<<<<<< HEAD
       {
         $result=DB::table('comment')->paginate(5);
         return view ('comment')->with ('data',$result);
@@ -78,19 +99,39 @@ class UserController extends Controller
          );
         
             $i=DB::table('comment')->insert($arrayName1);
+=======
+    {
+        $result=DB::table('comment')->paginate(5);
+        return view ('comment')->with ('data',$result);
+    }
+
+     public function savecomment(Request $request)
+    {
+        $post=$request->all();
+        unset($post['_token']);
+            $i=DB::table('comment')->insert($post);
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
             if($i>0)
             {
                 Session::flash('message','Record inserted');
                 return redirect('home');
             }
+<<<<<<< HEAD
      }
 
      public function editprofile1()
      {
+=======
+    }
+
+     public function editprofile1()
+    {
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
          $id = \Auth::id(); 
         $i=DB::table('users')->where('id',$id)->first();
         return view ('editprofile')->with('row',$i);
        
+<<<<<<< HEAD
      }
 
      public function updateprofile(Request $request)
@@ -107,11 +148,26 @@ class UserController extends Controller
          );
     
             $i=DB::table('users')->where('id',$cid)->update($arrayName  );
+=======
+    }
+
+     public function updateprofile(Request $request)
+    {
+       $post=$request->all();
+        unset($post['_token']);
+            $i=DB::table('users')->update($post);
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
             if($i>0)
             {
                 Session::flash('message','Record inserted');
                 return redirect('home');
             }
+<<<<<<< HEAD
      }
+=======
+    }
+
+
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 
 }

@@ -9,7 +9,10 @@
                  <a href ="<?php echo 'admincomment' ?>"class="panel-heading"> Comment</a>
                  <a href ="<?php echo 'cms' ?>"class="panel-heading"> CMS</a>
                  <a href ="<?php echo 'showuser' ?>"class="panel-heading"> Users</a>
+<<<<<<< HEAD
                   <a href ="<?php echo 'showcontact' ?>"class="panel-heading"> Show Contact</a>
+=======
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
                  
 
 

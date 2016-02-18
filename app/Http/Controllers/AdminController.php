@@ -26,8 +26,13 @@ class AdminController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+<<<<<<< HEAD
     {
         $result=DB::table('blogpost')->paginate(10);
+=======
+    {        
+        $result=DB::table('blogpost')->paginate(2);
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
         return view ('Admin')->with ('data',$result);
         //return view('home');
         
@@ -89,6 +94,7 @@ class AdminController extends Controller
 
     public function update(Request $request)
     {
+<<<<<<< HEAD
        $cid=$request['id'];
        $post=$request->all();
         unset($post['_token']);
@@ -114,6 +120,11 @@ class AdminController extends Controller
         $post=$request->all();
         unset($post['_token']);
             $i=DB::table('cms')->insert($post);
+=======
+       $post=$request->all();
+        unset($post['_token']);
+            $i=DB::table('blogpost')->update($post);
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
             if($i>0)
             {
                 Session::flash('message','Record inserted');
@@ -121,6 +132,7 @@ class AdminController extends Controller
             }
     }
 
+<<<<<<< HEAD
      public function admincomment()
     {
         $result=DB::table('comment')->paginate(3);
@@ -144,16 +156,43 @@ class AdminController extends Controller
         $i=DB::table('users')->where('id',$id)->first();
         return view ('editprofile')->with('row',$i);
        
+=======
+   
+
+     public function cms()
+    {
+         $id = \Auth::id(); 
+         return view('admin/cms')->with ('id',$id); 
+    }
+
+
+    public function savecms(Request $request)
+    {
+        $post=$request->all();
+        unset($post['_token']);
+            $i=DB::table('cms')->insert($post);
+            if($i>0)
+            {
+                Session::flash('message','Record inserted');
+                return redirect('Admin');
+            }
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
     }
 
      public function showcontact()
     {
+<<<<<<< HEAD
         $result=DB::table('contactus')->paginate(10);
         return view ('admin/showcontact')->with ('data',$result);
+=======
+        $result=DB::table('comment')->paginate(3);
+        return view ('admin/admincomment')->with ('data',$result);
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
         //return view('home');
         
     }
 
+<<<<<<< HEAD
      public function deletecontact($id)
     {
         $i=DB::table('contactus')->where('id',$id)->delete();
@@ -187,5 +226,26 @@ class AdminController extends Controller
         //return view('testtt')->with('data1',$res);
 
     
+=======
+     public function deletecomment($id)
+    {
+        $i=DB::table('comment')->where('id',$id)->delete();
+        if($i>0)
+        {
+        return view('admin/admincomment');
+        }
+    }
+
+    public function editprofile1($id)
+    {
+        
+        $i=DB::table('users')->where('id',$id)->first();
+        return view ('editprofile')->with('row',$i);
+       
+    }
+
+    
+
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
 
 }

@@ -151,7 +151,10 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+<<<<<<< HEAD
         
+=======
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
         //LaravelCaptcha\Providers\LaravelCaptchaServiceProvider::class,
         /*
          * Application Service Providers...

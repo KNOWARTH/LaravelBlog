@@ -37,9 +37,13 @@
                 <td><?php echo $row->comment ?></td>
                 
             <td>
+<<<<<<< HEAD
 
 
                <button> <a href="{{ 'approv_comment/'.$row->id }}">Aprove</a> </button> 
+=======
+               <button> <a href="<?php echo 'aprove/'.$row->id?>">Aprove</a> </button> 
+>>>>>>> 82a6770c9db64f9640ecf7320bfdca5a4328adb9
                <button>  <a href="<?php echo 'deletecomment/' .$row->id?>">Delete</a> </button> 
                
             </td>
