@@ -8,7 +8,9 @@
                  <a href ="<?php echo 'blogpost' ?>"class="panel-heading"> Blog Post</a>
                  <a href ="<?php echo 'admincomment' ?>"class="panel-heading"> Comment</a>
                  <a href ="<?php echo 'cms' ?>"class="panel-heading"> CMS</a>
-                 <a href ="<?php echo '' ?>"class="panel-heading"> About Us</a>
+                 <a href ="<?php echo 'showuser' ?>"class="panel-heading"> Users</a>
+                  <a href ="<?php echo 'showcontact' ?>"class="panel-heading"> Show Contact</a>
+                 
 
 
                 <div class="panel-body">
@@ -33,13 +35,13 @@
 
             <tr>
                 <td><?php echo $row->id ?></td>
-                <td><?php echo $row->title ?></td>
+                <td><h1><?php echo $row->title ?></h1></td>
                 <td><?php echo $row->content?></td>
                 <td><?php echo $row->published_at?></td>
                 
             <td>
-                <a href="<?php echo 'edit/'.$row->id?>">Edit</a> |
-                <a href="<?php echo 'delete/' .$row->id?>">Delete</a>
+               <button> <a href="<?php echo 'blogedit/'.$row->id?>">Edit</a> </button>
+               <button>  <a href="<?php echo 'delete/' .$row->id?>">Delete</a></button>
                
             </td>
             </tr>
